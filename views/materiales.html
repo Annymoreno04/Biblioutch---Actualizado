@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiales - Sistema de préstamos UTCH</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/materiales.css">
+    <!-- ✅ SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <img src="../images/utch.png" alt="Logo UTCH" class="logo">
+                <div class="university-name">
+                    <span class="uni-main">Universidad Tecnológica del Chocó</span>
+                    <span class="uni-sub">Diego Luis Córdoba</span>
+                </div>
+            </div>
+            <div class="header-titles">
+                <h1>Sistema de préstamos</h1>
+                <h2>Bibliográficos</h2>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="usuarios.html" class="nav-item">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <span>Usuarios</span>
+                </a>
+                <a href="materiales.html" class="nav-item active">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    <span>Materiales</span>
+                </a>
+                <a href="prestamos.html" class="nav-item">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <span>Préstamos</span>
+                </a>
+                <a href="devoluciones.html" class="nav-item">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    <span>Devoluciones</span>
+                </a>
+                <a href="reportes.html" class="nav-item">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                    <span>Reportes</span>
+                </a>
+            </nav>
+
+            <div class="user-section">
+                <div class="user-info">
+                    <p class="user-name" id="userName">Administrador</p>
+                    <p class="user-role" id="userRole">Administrador</p>
+                </div>
+                <button id="logoutBtn" class="btn-logout">
+                    <svg class="logout-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                    </svg>
+                    <span>Salir</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content (NO CAMBIADO) -->
+        <main class="main-content">
+            <div class="page-header">
+                <h2 class="page-title">Gestión de materiales</h2>
+                <button id="showFormBtn" class="btn-primary small-btn">+ Añadir</button>
+            </div>
+
+            <!-- Formulario (oculto como modal) -->
+            <div class="card hidden" id="materialFormContainer">
+                <form id="materialForm" class="form-grid">
+                    <input type="text" id="titulo" placeholder="Título *" required class="form-input">
+                    <input type="text" id="autor" placeholder="Autor *" required class="form-input">
+                    <input type="number" id="anio" placeholder="Año de publicación *" required class="form-input">
+                    <select id="idioma" required class="form-input">
+                        <option value="" disabled selected>Selecciona un idioma</option>
+                        <option value="es">Español</option>
+                        <option value="en">Inglés</option>
+                        <option value="fr">Francés</option>
+                    </select>
+                    <select id="tipo" class="form-input">
+                        <option value="" disabled selected>Seleccionar tipo material</option>
+                        <option value="Libro">Libro</option>
+                        <option value="Tesis">Tesis</option>
+                        <option value="Revista">Revista</option>
+                    </select>
+                    <select id="categoria" required class="form-input">
+                        <option value="" disabled selected>Selecciona la categoría del material</option>
+                        <option value="Literatura">Literatura</option>
+                        <option value="Ciencia">Ciencia</option>
+                        <option value="Tecnología">Tecnología</option>
+                        <option value="Educación">Educación</option>
+                    </select>
+                    <input type="number" id="ejemplares" placeholder="Número de ejemplares *" min="1" required
+                        class="form-input">
+                </form>
+            </div>
+
+            <!-- Tabla de inventario -->
+            <div class="card">
+                <div class="table-header">
+                    <h3 class="card-title">Inventario de materiales (<span id="materialCount">0</span>)</h3>
+                    <input type="text" id="searchInput" placeholder="🔍Buscar por título, código o autor"
+                        class="search-input">
+                </div>
+
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Título</th>
+                                <th>Autor</th>
+                                <th>Año publicación</th>
+                                <th>Tipo</th>
+                                <th>Categoría</th>
+                                <th>Ejemplares</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="materialsTable">
+                            <tr>
+                                <td colspan="8" class="empty-message">No hay materiales registrados</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="pagination" class="pagination" style="margin-top: 12px"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/materiales.js"></script>
+</body>
+
+</html>

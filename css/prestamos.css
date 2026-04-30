@@ -1,0 +1,226 @@
+/* Estilos base conservados */
+
+.title-icon { width: 24px; height: 24px; margin-right: 8px; }
+
+/* Encabezado principal */
+.prestamos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.page-title-left {
+  font-size: 30px;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+#btnGenerarPDFPrestamos {
+  padding: 13px 14px;
+  font-size: 14px;
+}
+/* Estilo para el botón '+ Añadir' en préstamos (coincide con mockup enviado) */
+#btnAgregarPrestamo, .btnAgregarPrestamo {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none; 
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 16px;
+  
+}
+
+#btnAgregarPrestamo:hover, .btnAgregarPrestamo:hover {
+  background: #1d4ed8;
+}
+
+.small-btn { 
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(11, 11, 11, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: rgb(215, 211, 211);
+  padding: 24px;
+  border-radius: 12px;
+  width: 400px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+/* Buscador */
+.search-container {
+  margin-bottom: 12px;
+}
+
+#buscarPrestamo {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Paginación */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+.page-btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #2563eb;
+    background: white;
+    color: #2563eb;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.page-btn.active,
+.page-btn:hover {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: #e5e7eb;
+}
+
+.btn-secondary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.rows-per-page {
+    width: auto;
+}
+
+/* Acciones (botones) */
+.actions { display:flex; gap:12px; justify-content:center; align-items:center; }
+.action-btn { display:inline-flex; align-items:center; justify-content:center; width:40px; height:34px; padding:6px; border-radius:6px; border:none; cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,0.08); transition:transform .12s, box-shadow .12s; }
+.action-btn svg { width:16px; height:16px; display:block; }
+.action-btn.view { background:#06b6d4; }
+.action-btn.view:hover { box-shadow:0 6px 12px rgba(6,182,212,0.18); }
+.action-btn.edit { background:#10b981; }
+.action-btn.edit:hover { box-shadow:0 6px 12px rgba(16,185,129,0.18); }
+.action-btn.delete { background:#ef4444; }
+.action-btn.delete:hover { box-shadow:0 6px 12px rgba(239,68,68,0.18); }
+.action-btn:hover { transform:translateY(-2px); }
+.action-btn svg [fill], .action-btn svg path { fill: white; }
+
+/* Utilidades */
+.warning { color: #b91c1c; font-size: 13px; }
+.btn-secondary {
+  background: #e5e7eb;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn-secondary:hover { background: #d1d5db; }
+
+.swal2-popup {
+  max-width: 760px;
+  width: 90% !important;
+  padding: 22px !important;
+  border-radius: 10px !important;
+}
+
+.swal2-title {
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  color: #374151 !important;
+  margin-bottom: 8px !important;
+}
+
+.swal2-html-container .modal-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.swal2-html-container .form-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e6e9ee;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.swal2-html-container .form-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.08);
+  border-color: #6366f1;
+}
+
+.swal2-html-container .modal-form .full-width {
+  grid-column: 1 / -1;
+}
+
+/* Botones estilo: Guardar morado, Cancelar gris */
+.swal2-actions {
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  margin-top: 14px;
+}
+
+.swal2-confirm {
+  background: #6d28d9 !important; /* morado */
+  color: white !important;
+  border: none !important;
+  padding: 10px 18px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 6px 18px rgba(109,40,217,0.16) !important;
+}
+
+.swal2-cancel {
+  background: #6b7280 !important; /* gris */
+  color: white !important;
+  border: none !important;
+  padding: 10px 18px !important;
+  border-radius: 8px !important;
+}
+
+@media (max-width:600px) {
+  .swal2-html-container .modal-form { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistema de Préstamos UTCH</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <div class="login-container" style="background-image: url('images/fondo_utch.jpg');">
+        <div class="login-overlay"></div>
+
+        <div class="login-card">
+            <div class="login-header">
+                <div class="login-icon">
+                    <img src="./images/utch.png" alt="Logo UTCH" class="logo">
+                </div>
+                <h1>Sistema de Préstamos</h1>
+                <p class="subtitle">
+                    Biblioteca "Miguel A. Caicedo Mena"
+                    <br>
+                    <span class="university">Universidad Tecnológica del Chocó</span>
+                </p>
+            </div>
+
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" name="username" placeholder="Ingrese su usuario" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <div class="password-input">
+                        <input type="password" id="password" name="password" placeholder="Ingrese su contraseña"
+                            required>
+                        <button type="button" id="togglePassword" class="toggle-password">
+                            <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" class="eye-icon" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+                <button type="submit" class="btn-login">Iniciar Sesión</button>
+
+                <div class="demo-credentials">
+                    <span class="credential-label">Usuario:</span> admin |
+                    <span class="credential-label">Contraseña:</span> password
+                </div>
+
+                <p class="footer-text">© 2025 UTCH - Todos los derechos reservados</p>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+
+</html>
