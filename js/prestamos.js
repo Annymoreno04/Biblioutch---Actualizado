@@ -599,15 +599,28 @@ async function eliminarPrestamo(id) {
         icon: "warning",
         showCancelButton: true,
         confirmButtonText: "Sí, eliminar",
-        cancelButtonText: "Cancelar",
+        cancelButtonText: "Caneeeecelar",
         confirmButtonColor: "#dc2626"
     }).then(async r => {
         if (!r.isConfirmed) return;
 
         try {
-            await fetch(`${API.prestamos}?id=${id}`, { method: "DELETE" });
-            loadPrestamos();
-            Swal.fire("Eliminado", "El préstamo fue eliminado correctamente", "success");
+            const res = await fetch(`${API.prestamos}?id=${id}`, { method: "DELETE" });
+
+             const data = await res.json();
+             console.log("Respuesta servidor (DELETE):", data); // Debug
+
+             if (data.success === true) {
+                 Swal.fire("Eliminado", "El préstamo fue eliminado correctamente", "success");
+                  loadPrestamos();
+           
+            } else   {
+                   Swal.fire("Error", data.error || "No se pudo eliminar el préstamo", "error");
+        
+            }   
+           // console.log("Respuesta servidorxxx:", data); // Debug
+          
+            //Swal.fire("Eliminado", "El préstamo fue eliminado correctamente", "success");
         } catch (error) {
             console.error("Error al eliminar:", error);
             Swal.fire("Error", "No se pudo eliminar el préstamo", "error");

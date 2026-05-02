@@ -32,15 +32,28 @@ switch ($method) {
     // ELIMINAR PRÉSTAMO
     // ===========================
     case 'DELETE':
-        parse_str($_SERVER['QUERY_STRING'], $params);
-        $id = $params['id'] ?? null;
-        $result = $model->delete($id);
-        if (isset($result['error'])) {
-            http_response_code(400);
-            echo json_encode($result);
-        } else {
-            echo json_encode($result);
+        try{
+            parse_str($_SERVER['QUERY_STRING'], $params);
+            $id = $params['id'] ?? null;
+            $result = $model->delete($id);
+            if (isset($result['error'])) {
+                http_response_code(400);
+                //echo json_encode($result);
+                echo json_encode([
+                    'success' => false,
+                    'error' => $result['error']
+                ]);
+            } else {
+                echo json_encode($result);
+            }
+        } catch (Exception $e) {
+            http_response_code(500);
+            echo json_encode([
+                'success' => false,
+                'error' => 'No es posible eliminar el préstamo' // $e->getMessage()
+            ]);
         }
+
         break;
 
     default:
